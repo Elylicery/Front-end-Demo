@@ -1,0 +1,225 @@
+/* all tag */
+* {
+  font-family: Arial;
+  font-size: 14px;
+  margin:0;
+  padding: 0;
+  border: none;
+}
+
+/*考虑对ie的兼容性*/
+header,nav,section,aside,article,footer { display: block;}/*浏览器如果不识别就默认当作div*/
+
+a {
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+/* banner */
+
+header{
+  height: 80px;
+  background: #000000;
+}
+
+header > .container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+header > .container > a {
+  display: block;
+  float: left;
+  margin: 5px 25px;
+}
+
+header > .container > nav {
+  float: right;
+}
+
+header > .container > nav > a {
+  font-size: 24px;
+  display: block;
+  float: left;
+  width: 110px;
+  height: 73px;
+  line-height: 73px;
+  text-align: center;
+  color: #ffffff;
+}
+
+header > .container > nav > a:hover {
+  padding-bottom: 7px;
+} 
+
+header > .container > nav > a:nth-child(1){
+  background: #433b90;
+}
+
+header > .container > nav > a:nth-child(2){
+  background: #017fcb;
+}
+
+header > .container > nav > a:nth-child(3){
+  background: #78b917;
+}
+
+header > .container > nav > a:nth-child(4){
+  background: #f3b800;
+}
+
+header > .container > nav > a:nth-child(5){
+  background: orange;
+}
+
+header > .container > nav > a:nth-child(6){
+  background: #d40112;
+}
+
+/* banner */
+.banner{
+  background: #eaeaea;
+}
+.banner > ul {
+  position: relative;
+  width: 1490px;
+  height: 538px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.banner > ul > li {
+  position:absolute;/*绝对定位（相对于第一个具有relative或abosolute的父元素）*/
+  width: 610px;
+  height: 300px;
+  overflow: hidden;/*隐藏超出的范围*/
+}
+
+.banner > ul > li.active {
+  z-index: 2;
+  top: 37px;
+  right: 0;
+  left: 0;
+  width: 960px;
+  height: 460px;
+  margin: auto;
+  border: 1px solid #fff;
+}
+
+.banner > ul > li.left {
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.banner > ul > li.right {
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.banner > ul > li > img {
+  height: 100%;
+  position: absolute;/*移动图片在边框里的位置*/
+  left: -30%;
+}
+
+/* main */
+.main {
+  width: 1200px;
+  height: 473px;
+  margin: 34px auto 0;
+}
+.main h1 {
+  font-size: 30px;
+  font-weight: lighter;
+  margin-bottom: 23px;
+}
+
+.main h1 > samp {
+  font-size: 30px;/*samp如果不指定大小，会默认比父元素小一号*/
+  color: #7c7c7c;
+}
+
+.main > aside {
+  float: left;
+  width: 450px;
+}
+
+.main > aside > dl {
+  position: relative;
+  display: block;
+  height: 74px;
+  margin-bottom: 17px;
+}
+
+.main > aside > dl > dt {
+  position: absolute;
+  top: -1px;
+  left: 92px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 16px;
+  text-decoration: underline;
+}
+
+.main > aside > dl > dd:first-of-type {
+  position: absolute;
+  left: 0;
+}
+
+.main > aside > dl > dd:last-of-type {
+  position: absolute;
+  top: 20px;
+  left: 90px;
+}
+
+.main > article {
+  float: right;
+  width: 720px;
+  overflow: hidden;
+}
+.main > article > p,
+.main > article >img {
+  margin-bottom: 20px;
+}
+
+/* footer */
+
+footer {
+  background: #000000;
+}
+
+footer > .container {
+  width: 1200px;
+  height: 64px;
+  margin: 0 auto;
+}
+
+footer > .container > p {
+  line-height: 64px;
+  float: left;
+  color: #ffffff;
+}
+
+footer > .container > span {
+  float: right;
+  margin: 14px 40px;
+}
+
+footer > .container > span > img {
+  margin-left: 4px;
+  opacity: .7;
+}
+
+footer > .container > span > img:hover {
+  opacity: 1;
+  cursor: pointer;
+}
