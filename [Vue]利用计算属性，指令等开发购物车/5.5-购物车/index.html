@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>购物车实例</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="app" v-cloak>
+    <template v-if="list.length">
+      <table>
+        <!--表格头 商品列表信息-->
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox" v-model="isAllCheck" @change="selectedAll">全选
+            </th>
+            <th></th>
+            <th>商品名称</th>
+            <th>商品单价</th>
+            <th>购买数量</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <!--表格体 按分类展示商品-->
+        <tbody v-for="item in list" v-if="item.goodsList.length" @change="allCate()">
+          <tr class="cate">
+            <td colspan="6">
+              <input type="checkbox" v-model="item.cateSelect" @change="selectedCateAll(item)">{{item.cateName}}</td>
+          </tr>
+          <tr v-for="(good,index) in item.goodsList">
+            <td>
+              <input type="checkbox" v-model="good.select" @change="isChecked(item)">
+            </td>
+            <td>{{index+1}}</td>
+            <td>{{good.name}}</td>
+            <td>{{good.price}}</td>
+            <td>
+              <button @click="handleReduce(item,index)" :disabled="item.count === 1">-</button>
+              {{good.count}}
+              <button @click="handleAdd(item,index)">+</button>
+            </td>
+            <td>
+              <button @click="handleRemove(item,index)">移除</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div>总价：￥{{totalPrice}}</div>
+    </template>
+    <div v-else>
+      购物车为空
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
