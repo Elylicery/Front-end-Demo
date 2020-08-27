@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>时间转换指令</title>
+</head>
+<body>
+  <div id="app" v-cloak>
+    <p>这里是时间戳: {{timeNow}} 对应日期：{{timeNowFormat}}</p>
+    显示状态：
+    <div v-time="timeNow"></div>
+    <p>这里是时间戳: {{timeBefore}} 对应日期:{{timeBeforeFormat}}</p>
+    显示状态：
+    <div v-time="timeBefore"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="time.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
