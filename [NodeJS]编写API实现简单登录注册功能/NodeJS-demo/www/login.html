@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登陆注册</title>
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+      <div class="login-wrapper">
+          <div class="header">Login</div>
+          <div class="form-warpper">
+              <input type="text" name="username" placeholder="username" class="input-item" id="username">
+              <input type="password" name="password" placeholder="password" class="input-item" id="password">
+              <div class="btn" id="login">Login</div>
+          </div>
+          <div class="msg" id="reg">
+              Don't have account?<a href="#">Sign up</a>
+          </div>
+      </div>
+  </div> 
+
+    <script>
+      //登录
+      $('#login').click(function(){
+        $.ajax({
+          url:"/login",
+          data:{
+            username:$('#username').val(),
+            password:$('#password').val(),
+          },
+          dataType:"json",
+          success(res){
+            //出错了 res.err =1 
+            if(res.err){
+              alert(res.msg)
+            }else{
+              alert('登录成功!');
+              location.href ="admin.html";
+            }
+          }
+        })
+      });
+      //注册
+      $('#reg').click(function(){
+        $.ajax({
+          url:"/reg",
+          method:"post",
+          data:{
+            username:$('#username').val(),
+            password:$('#password').val(),
+          },
+          dataType:"json",
+          success(res){
+            //出错了 res.err =1 
+            if(res.err){
+              alert(res.msg)
+            }else{
+              alert('注册成功!')
+            }
+          }
+        })
+      });
+    </script>
+</body>
+</html>
