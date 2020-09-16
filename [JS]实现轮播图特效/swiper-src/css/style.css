@@ -1,0 +1,222 @@
+*{
+  margin:0;
+  padding: 0;;
+}
+
+body{
+  font-family: "微软雅黑";
+  color: #14191e;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:link,a:visited{
+  color: #5e5e5e;
+}
+
+/*unicode引用 淘宝的iconfont图标库*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('../img/font/iconfont.eot');
+  src: url('../img/font/iconfont.eot#iefix') format('embedded-opentype'),
+      url('../img/font/iconfont.woff2') format('woff2'),
+      url('../img/font/iconfont.woff') format('woff'),
+      url('../img/font/iconfont.ttf') format('truetype'),
+      url('../img/font/iconfont.svg#iconfont') format('svg');
+}
+
+.main{
+  width: 1200px;
+  height: 460px;
+  margin: 30px auto;
+  overflow: hidden;
+  position: relative;
+}
+
+/*焦点图*/
+.banner{
+  width: 1200px;
+  height: 460px;
+  overflow: hidden;
+}
+
+.banner-slide{
+  width: 1200px;
+  height: 460px;
+  float: left;
+  background-repeat: no-repeat;
+  display: none;
+}
+
+.slide-active{
+  display: block;
+}
+
+.slide1{
+  background-image: url('../img/bg1.jpg');
+}
+
+.slide2{
+  background-image: url('../img/bg2.jpg');
+}
+.slide3{
+  background-image: url('../img/bg3.jpg');
+}
+
+.button{
+  position: absolute;/*绝对定位，相对于父元素main，所以给main设置position:relative*/
+  width: 40px;
+  height: 80px;
+  left: 244px;
+  top:50%; /*下面这两行保证按钮在垂直方向上居中*/
+  margin-top: -40px;
+  background: url('../img/arrow.png') center center no-repeat;
+  transform: rotate(180deg);/*按钮旋转180度*/
+}
+
+.button:hover{
+  background-color: #333;
+  opacity: 0.8;
+  filter: alpha(opacity=80);/*兼容IE*/
+}
+
+.next {
+  left: auto;
+  right: 0;/*同时设置left和right，让left:auto就可以让right生效*/
+  transform: rotate(0deg);/*按钮不旋转*/
+}
+
+.dots{
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  line-height: 12px;
+}
+
+.dots span{
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(7,17,27,0.4);/*包含透明度*/
+  margin-left: 8px;
+  box-shadow:0 0 0 2px rgba(255,255,255,0.8) inset ;/*利用阴影实现白色的描边效果 inset表示阴影出现在原点的里面*/
+  cursor: pointer;
+}
+
+.dots span.active{
+  /*注意选择器的层级关系，这里active要覆盖原span的样式，所以要跟他同级*/
+  box-shadow: 0 0 0 2px rgba(7,17,27,0.4) inset;
+  background-color: #ffffff !important;  
+}
+
+/*菜单*/
+.menu-box{
+  position: absolute;/*绝对定位,悬浮在图片上面*/
+  left: 0px;
+  top:0px;
+  width: 244px;
+  height: 460px;
+  background: rgba(7,17,27,0.3);
+  z-index:1;
+}
+
+/*主菜单*/
+
+/*菜单是半透明的，但我们不希望内容也是半透明，所以menu-box和menu-content并不是父子关系，而是同级关系*/
+.menu-content{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width:244px;
+  height: 460px;
+  z-index: 2;/*控制堆叠顺序*/
+}
+
+.menu-item{
+  height: 64px;
+  line-height: 66px;
+  cursor: pointer;
+  padding:0 24px;
+}
+
+.menu-item a{
+  position: relative;
+  display: block;
+  color:#fff;
+  font-size:16px;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+  height: 63px;
+  padding: 0 8px;
+}
+
+.menu-item:last-child a{
+  border-bottom: none;
+}
+
+.menu-item i{
+  position: absolute;
+  top: 2px;
+  right: 12px;
+  color: rgba(255,255,255,0.5);
+  font-style: normal;
+  font-weight: normal;
+  font-family: "iconfont" !important;
+  font-size: 20px;
+}
+
+.sub-menu{
+  width: 730px;
+  height: 458px;
+  position: absolute;
+  left: 244px;
+  top: 0;
+  background: #fff;
+  z-index: 500;
+  border: 1px solid #d9dee1;
+  box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+}
+
+.inner-box{
+  width: 100%;
+  height: 100%;
+  background: url('../img/fe.png') no-repeat;
+}
+
+.sub-inner-box{
+  width: 652px;
+  margin-left: 40px;
+  overflow: hidden;
+}
+
+.title{
+  font-size: 16px;
+  color: #f01414;
+  line-height: 16px;
+  font-weight: bold;
+  margin: 28px 0 30px;
+}
+
+.sub-row{
+  margin-bottom: 25px;
+}
+
+.bold{
+  font-weight: 700;
+}
+
+.mr10{
+  margin-right: 10px;
+}
+
+.ml10{
+  margin-left: 10px;
+}
+
+/*隐藏类*/
+.hide{
+  display:none;
+}
+

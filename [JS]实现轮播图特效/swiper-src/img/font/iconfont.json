@@ -1,0 +1,16 @@
+{
+  "id": "2072548",
+  "name": "平日测试用",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "584251",
+      "name": "右箭头",
+      "font_class": "iconfontjiantou5",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    }
+  ]
+}
