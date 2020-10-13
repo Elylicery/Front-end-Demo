@@ -1,0 +1,21 @@
+body{
+  margin:0;
+  padding: 0;
+  font-size: 12px;
+  font-family: "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Nenu",微软雅黑;
+}
+
+a{
+  color:#14191e;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #f01400;
+}
+
+h2,h3{
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
