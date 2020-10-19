@@ -7,6 +7,9 @@ userReplaceText = document.getElementById('userReplaceText'),
 replaceBtn = document.getElementById('replaceBtn'),
 replaceResult = document.getElementById('replaceResult');
 
+//reglist = document.getElementsByClassName("reglist");
+var reglist = document.getElementsByTagName('a');
+
 var pattern,modifier="";
 
 //获取模式修饰符
@@ -55,4 +58,10 @@ replaceBtn.onclick = function(){
   }
   pattern = new RegExp('('+userRegExp.value+')',modifier);
   replaceResult.innerHTML = userText.value.replace(pattern,'<span style="color:red">'+userReplaceText.value+'</span>');
+}
+
+for(var i=0;i<reglist.length;i++){
+  reglist[i].onclick = function(){
+    userRegExp.value = this.title;
+  }
 }

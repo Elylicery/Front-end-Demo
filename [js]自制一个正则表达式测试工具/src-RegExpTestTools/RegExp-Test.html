@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="regexp">
+  <div class="wrap cf">
     <h1 class="title">正则表达式测试工具</h1>
-    <textarea id="userText" class="textbox" placeholder="在此输入待匹配的文本"></textarea>
-    <!--匹配-->
-    <p>
-      正则表达式：<input type="text" id="userRegExp" class="textfield" placeholder="在此输入正则表达式">
-      <input type="checkbox" name="userModifier" value="i"/>忽略大小写
-      <input type="checkbox" name="userModifier" value="g"/>全局匹配
-      <input type="checkbox" name="userModifier" value="m"/>多行匹配
-      <input type="button" id="matchingBtn" value="测试匹配">
-    </p>
-    匹配结果:
-    <div id="matchingResult" class="textbox readonly" disabled></div>
-    <!--替换-->
-    <p>
-      替换文本：<input type="text" id="userReplaceText" class="textfield" placeholder="在此输入替换文本">
-      <input type="button" id="replaceBtn" value="替换">
-    </p>
-    匹配结果:
-    <div id="replaceResult" class="textbox readonly" disabled></div>
+    <div class="regexp">
+      <textarea id="userText" class="textbox" placeholder="在此输入待匹配的文本"></textarea>
+      <!--匹配-->
+      <p>
+        正则表达式：<input type="text" id="userRegExp" class="textfield" placeholder="在此输入正则表达式">
+        <input type="checkbox" name="userModifier" value="i" />忽略大小写
+        <input type="checkbox" name="userModifier" value="g" />全局匹配
+        <input type="checkbox" name="userModifier" value="m" />多行匹配
+        <input type="button" id="matchingBtn" value="测试匹配">
+      </p>
+      匹配结果:
+      <div id="matchingResult" class="textbox readonly" disabled></div>
+      <!--替换-->
+      <p>
+        替换文本：<input type="text" id="userReplaceText" class="textfield" placeholder="在此输入替换文本">
+        <input type="button" id="replaceBtn" value="替换">
+      </p>
+      匹配结果:
+      <div id="replaceResult" class="textbox readonly" disabled></div>
+    </div>
+    <dl class="reglist">
+      <dt>常用正则表达式</dt>
+      <dd><a href="javascript:;" title="[\u4e00-\u9fa5]">匹配中文字符</a></dd>
+      <dd><a href="javascript:;" title="[1-9\d{4,}]">QQ</a></dd>
+      <dd><a href="javascript:;" title="[\u4e00-\u9fa5]">匹配中文字符</a></dd>
+      <dd><a href="javascript:;" title="[\u4e00-\u9fa5]">匹配中文字符</a></dd>
+      <dd><a href="javascript:;" title="[\u4e00-\u9fa5]">匹配中文字符</a></dd>
+      <dd><a href="javascript:;" title="[\u4e00-\u9fa5]">匹配中文字符</a></dd>
+    </dl>
   </div>
+
+  <p style="text-align: center;">2020-10-19 <strong style="color:#08c">Ely</strong></p>
 </body>
 <script type="text/javascript" src="test.js"></script>
+
 </html>

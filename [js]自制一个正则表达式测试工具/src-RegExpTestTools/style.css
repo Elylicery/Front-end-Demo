@@ -1,9 +1,26 @@
-.regexp{
-  width: 650px;
+dl,dd{
+  padding: 0;
+  margin: 0;
+}
+.cf{
+  zoom: 1;
+}
+.cf:after{
+  display: block;
+  clear: both;
+  content: "";
+}
+.wrap{
+  width: 1000px;
   margin: 100px auto;
+}
+.regexp{
+  float: left;
+  width: 650px;
+  margin: 0px auto;
   font-size: 14px;
 }
-.regexp .title{
+.title{
   color:#777;
   font-size: 24px;
   text-align: center;
@@ -25,4 +42,38 @@
   width: 215px;
   padding: 5px;
   border:1px solid #ccc;
+}
+
+.reglist{
+  float: right;
+  width: 320px;
+  border:1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  padding: 20px 0;
+}
+
+.reglist dt{
+  margin-bottom: 10px;
+  text-indent: 20px;
+  color:#999;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.reglist dd{
+  height: 40px;
+  line-height: 40px;
+  text-indent: 20px;
+}
+
+.reglist a{
+  display: block;
+  color:#08c;
+  text-decoration: none;
+}
+
+.reglist a:hover{
+  color:#005580;
+  background-color: #eeeeee;
 }
