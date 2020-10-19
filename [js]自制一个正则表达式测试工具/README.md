@@ -9,7 +9,7 @@ html+css+js
 
 # 效果图
 
-![](.\final.png)
+![](.\img\final.png)
 
 # 源码
 
