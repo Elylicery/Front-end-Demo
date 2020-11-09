@@ -1,0 +1,26 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+
+.banner{
+	width:600px;
+	height:338px;
+	overflow:hidden;
+	position:relative;
+	margin:50px auto;
+}
+
+.banner a{
+	display:block;
+	width:600px;
+	height:338px;
+	float:left;
+}
+
+.banner a img{
+	width:600px;
+	height:338px;
+}
+
