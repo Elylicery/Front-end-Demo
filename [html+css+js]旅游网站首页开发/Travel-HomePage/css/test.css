@@ -1,0 +1,38 @@
+
+/* .banner .center-wrap .banner-nav>ul>li.current {
+  background-color: rgba(0, 0, 0, .63);
+}  */
+
+.banner .center-wrap .banner-nav .menus-box .menu {
+  /* 让menu隐藏 */
+  /* display: none;
+  position: absolute;
+  left: 296px;
+  top: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .63);
+  color: white;
+  padding: 16px; */
+  /* 加上box-sizing属性之后，height: 100%; 就是盒子的总高度了 */
+  /* 就不需要减padding了，因为百分比怎么减padding呀？ */
+  /* box-sizing: border-box;
+  z-index: 99999; */
+}
+/* 有current类名的menu是显示的 */
+/* .banner .center-wrap .banner-nav .menus-box .menu.current {
+  display: block;
+}
+.banner .center-wrap .banner-nav .menus-box .menu a {
+  color: white;
+}
+.banner .center-wrap .banner-nav .menus-box .menu dl {
+  margin-bottom: 16px;
+}
+.banner .center-wrap .banner-nav .menus-box .menu dl dt {
+  line-height: 30px;
+  font-size: 18px;
+}
+.banner .center-wrap .banner-nav .menus-box .menu dl dd {
+  line-height: 25px;
+  font-size: 15px;
+} */
