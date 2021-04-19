@@ -125,11 +125,32 @@
 
 		<!--banner-->
 		<section class="banner" id="banner">
+      <!--轮播图-->
 			<ul id="carousel_list" class="carousel_list">
 				<li>
 					<img src="images/banner1.jpg" alt="" />
 				</li>
+        <li>
+					<img src="images/banner2.jpg" alt="" />
+				</li>
+        <li>
+					<img src="images/banner3.jpg" alt="" />
+				</li>
+        <li>
+					<img src="images/banner4.jpg" alt="" />
+				</li>
+        <li>
+					<img src="images/banner5.jpg" alt="" />
+				</li>
 			</ul>
+      <ol class="circles" id="circle_ol">
+        <li data-n="0" class="current"></li>
+        <li data-n="1"></li>
+        <li data-n="2"></li>
+        <li data-n="3"></li>
+        <li data-n="4"></li>
+      </ol>
+      <!--轮播图左侧垂直菜单-->
 			<div class="center-wrap">
 				<a href="javascript:;" id="left_btn" class="leftbtn"></a>
 				<a href="javascript:;" id="right_btn" class="rightbtn"></a>
@@ -530,6 +551,8 @@
 				</nav>
 			</div>
 		</section>
+    <script src="js/carousel.js"></script>
+    <script src="js/menu.js"></script>
 
 		<!-- 热门广告 -->
 		<section class="hot-ads clearfix">
@@ -1129,66 +1152,73 @@
 			</div>
 		</section>
 
-    <!-- 页脚 -->
-    <footer>
-      <div class="part1">
-          <div class="center-wrap">
-              <nav>
-                  <ul class="clearfix">
-                      <li><a href="">机酒自由行</a></li>
-                      <li><a href="">当地玩乐</a></li>
-                      <li><a href="">优惠机票</a></li>
-                      <li><a href="">签证</a></li>
-                      <li><a href="">马尔代夫</a></li>
-                      <li><a href="">邮轮</a></li>
-                      <li><a href="">租车自驾</a></li>
-                      <li><a href="">欧洲铁路</a></li>
-                      <li><a href="">新鲜甩尾</a></li>
-                      <li><a href="">深度旅行</a></li>
-                  </ul>
-              </nav>
-              <div class="dlbox clearfix">
-                  <dl class="txfw">
-                      <dt>贴心服务</dt>
-                      <dd>我们收集慕云游者的真实诉求，找寻特色旅行目的地，让慕云游者放心出行</dd>
-                  </dl>
-                  <dl class="ccsx">
-                      <dt>层层筛选</dt>
-                      <dd>对旅游产品供应商严格筛选，资质层层把关</dd>
-                  </dl>
-                  <dl class="axph">
-                      <dt>安心陪护</dt>
-                      <dd>对慕云游者的购买进行跟踪服务以及质量监控，生效投诉先行赔付，出现问题及时解决</dd>
-                  </dl>
-              </div>
-          </div>
-      </div>
-      <div class="part2">
-          <div class="center-wrap">
-              <div class="r1 clearfix">
-                  <h2>慕云游商城</h2>
-                  <p class="slogan">从一张机票、一家酒店的订购，到一次暖心的接机服务、一张轻松融入当地的交通卡让我们带你探索这个世界</p>
-              </div>
-              <div class="links clearfix">
-                  <ul>
-                      <li><a href="">关于慕云游商城</a></li>
-                      <li><a href="">服务与隐私</a></li>
-                      <li><a href="">联系我们</a></li>
-                      <li><a href="">旅游度假资质</a></li>
-                      <li><a href="">营业执照</a></li>
-                      <li><a href="">投诉建议</a></li>
-                  </ul>
-              </div>
-              <div class="copyrights">
-                  &copy; 2020 imooc.com  京ICP备 12003892号-11 京公网安备11010802030151号 <a href="">营业执照</a>
-              </div>
-          </div>
-      </div>
-  </footer>
+		<!-- 页脚 -->
+		<footer>
+			<div class="part1">
+				<div class="center-wrap">
+					<nav>
+						<ul class="clearfix">
+							<li><a href="">机酒自由行</a></li>
+							<li><a href="">当地玩乐</a></li>
+							<li><a href="">优惠机票</a></li>
+							<li><a href="">签证</a></li>
+							<li><a href="">马尔代夫</a></li>
+							<li><a href="">邮轮</a></li>
+							<li><a href="">租车自驾</a></li>
+							<li><a href="">欧洲铁路</a></li>
+							<li><a href="">新鲜甩尾</a></li>
+							<li><a href="">深度旅行</a></li>
+						</ul>
+					</nav>
+					<div class="dlbox clearfix">
+						<dl class="txfw">
+							<dt>贴心服务</dt>
+							<dd>
+								我们收集慕云游者的真实诉求，找寻特色旅行目的地，让慕云游者放心出行
+							</dd>
+						</dl>
+						<dl class="ccsx">
+							<dt>层层筛选</dt>
+							<dd>对旅游产品供应商严格筛选，资质层层把关</dd>
+						</dl>
+						<dl class="axph">
+							<dt>安心陪护</dt>
+							<dd>
+								对慕云游者的购买进行跟踪服务以及质量监控，生效投诉先行赔付，出现问题及时解决
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<div class="part2">
+				<div class="center-wrap">
+					<div class="r1 clearfix">
+						<h2>慕云游商城</h2>
+						<p class="slogan">
+							从一张机票、一家酒店的订购，到一次暖心的接机服务、一张轻松融入当地的交通卡让我们带你探索这个世界
+						</p>
+					</div>
+					<div class="links clearfix">
+						<ul>
+							<li><a href="">关于慕云游商城</a></li>
+							<li><a href="">服务与隐私</a></li>
+							<li><a href="">联系我们</a></li>
+							<li><a href="">旅游度假资质</a></li>
+							<li><a href="">营业执照</a></li>
+							<li><a href="">投诉建议</a></li>
+						</ul>
+					</div>
+					<div class="copyrights">
+						&copy; 2020 imooc.com  京ICP备
+						12003892号-11 京公网安备11010802030151号 <a href="">营业执照</a>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-  <!-- 返回顶部按钮 -->
-  <a href="javascript:;" class="backtotop" id="backtotop">
-      返回<br>顶部
-  </a>
+		<!-- 返回顶部按钮 -->
+		<a href="javascript:;" class="backtotop" id="backtotop"> 返回<br />顶部 </a>
+    <script src="js/backtotop.js"></script>
+
 	</body>
 </html>

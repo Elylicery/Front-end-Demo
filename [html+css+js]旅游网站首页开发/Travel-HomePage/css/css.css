@@ -152,25 +152,56 @@
 /*banner*/
 .banner  {
   position: relative;
-  overflow: hidden;
+  overflow: hidden;/*溢出隐藏*/
 }
+/*banner轮播图*/
 .banner .carousel_list {
   width: 600%;
   /* 清除浮动 */
-  overflow: hidden;
+  overflow: hidden; 
   /* translateX中的百分数表示相对于它本身的宽度的多少倍 */
-  /* transform: translateX(-33.333%); */
+  /* transform: translateX(-33.333%);  */
   transition: transform .5s ease 0s;
 }
 .banner .carousel_list li{
   float: left;
-  width: 16.666%;
+  width: 16.666%;/*每个图都是16%*/
 }
 .banner .carousel_list li img {
   width: 100%;
   /* 白边的处理 */
   vertical-align: middle;
+} 
+
+/*轮播图小圆点*/
+.banner .circles{
+  width: 160px;
+  height:20px;
+  position: absolute;
+  bottom: 10px;
+  left:50%;
+  margin-left: -80px;
+  z-index: 9999;
 }
+.banner .circles li{
+  float: left;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: orange;
+  margin-right: 10px;
+  background-color: rgb(27,233,147);
+  transition: all .5 ease 0s;
+  cursor: pointer;
+}
+.banner .circles li.current{
+  width: 40px;
+  background-color: #20BD9A;
+}
+.banner .circles li:last-child{
+  margin-right: 0px;
+}
+/*banner上遮罩*/
 .banner .center-wrap{
   /* 只要有压盖，第一时间就要想到绝对定位 */
   position: absolute;

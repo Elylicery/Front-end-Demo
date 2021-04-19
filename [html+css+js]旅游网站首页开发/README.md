@@ -2,7 +2,7 @@
 
 **整体效果**
 
-![image-20210413175521311](README.assets/image-20210413175521311.png)
+![image-20210419211530552](README.assets/image-20210419211530552.png)
 
 ![image-20210413175538988](README.assets/image-20210413175538988.png)
 
@@ -20,7 +20,7 @@
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
 ```
 
-# 基础的布局
+# HTML+CSS部分
 
 ## 页面顶部开发
 
@@ -244,9 +244,7 @@ iconfont
 } 
 ```
 
-
-
-# 总结
+## 总结
 
 **心得体会**
 
@@ -260,3 +258,110 @@ iconfont
 * 公共类的使用
 * 清除浮动
 * 使用`::before`和`::after`简化开发
+
+# JS部分
+
+## Banner轮播图
+
+![image-20210414152824007](README.assets/image-20210414152824007.png)
+
+**carousel.js里**
+
+比较复杂，看源代码。
+
+注意的点：
+
+* 左右按钮控制轮播
+* 底部小圆点变化，控制轮播
+* 使用节流，控制点击左右按钮的频率
+* 自动轮播，鼠标划入暂停轮播，离开继续轮播
+
+## 返回顶部动画
+
+![image-20210419214459146](README.assets/image-20210419214459146.png)
+
+更改 document.documentELem的scroll top属性，使用定时器驱动
+
+```html
+<!-- 返回顶部按钮 -->
+		<a href="javascript:;" class="backtotop" id="backtotop"> 返回<br />顶部 </a>
+<script src="js/backtotop.js"></script>
+```
+
+```css
+.backtotop {
+  position: fixed;/*固定定位，固定在页面一个地方*/
+  bottom: 80px;
+  right: 80px;
+  width: 80px;
+  height: 80px;
+  background: #ccc;
+  color: #000;
+  /* 隐藏元素 */
+  display: none;
+}
+```
+
+```js
+(function(){
+  var backtotop = document.getElementById('backtotop');
+  var timer;
+
+  //返回顶部按钮的监听
+  backtotop.onclick = function(){
+    //设表先关
+    clearInterval(timer);
+    //设置定时器
+    timer = setInterval(function(){
+      document.documentElement.scrollTop-=100;
+      
+      if(document.documentElement.scrollTop <= 0){
+        clearInterval(timer);
+
+      }
+    },20)
+  };
+
+  //监听页面的滚动
+  window.onscroll = function(){
+    //卷动值
+    var scrollTop = document.documentElement.scrollTop || window.scrollY;
+
+    //页面没有卷动
+    if(scrollTop === 0){
+      backtotop.style.display = 'none';
+    }else{
+      backtotop.style.display = 'block';
+    }
+  }
+})();
+```
+
+
+
+## 垂直菜单
+
+![image-20210419214520899](README.assets/image-20210419214520899.png)
+
+使用事件委托，利用data-k属性标明该li是哪个，对应的隐藏菜单是哪个
+
+<img src="README.assets/image-20210419211955342.png" alt="image-20210419211955342" style="zoom:50%;" />
+
+
+
+【注意】
+
+* 为什么用onmouserover不用onmoseenter？因为onmouseenter不冒泡！
+
+* `[ ]`表示某个属性匹配，找到和左侧匹配的div 
+
+  ```js
+  //寻找匹配的menu
+        var themenu = document.querySelector('.menus-box .menu[data-t='+t+']');
+  ```
+
+### 重难点内容
+
+* <font color=red>通栏轮播图</font>和<font color=red>固定宽度的轮播图</font>完全不一样！一定要弄懂600%和16.66%的奥秘
+* 函数节流非常重要
+* data-n属性很关键，必须弄懂它的原理！
