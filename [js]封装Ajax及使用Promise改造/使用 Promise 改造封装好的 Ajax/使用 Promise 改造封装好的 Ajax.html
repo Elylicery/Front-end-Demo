@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>使用 Promise 改造封装好的 Ajax</title>
+  </head>
+  <body>
+    <script type="module">
+      import { ajax, get, getJSON, post } from './ajax/index.js';
+
+      const url = 'https://www.imooc.com/api/http/search/suggest?words=js';
+      // const url = 'https://www.iimooc.com/api/http/search/suggest?words=js';
+
+      const p = getJSON(url, {
+        params: { username: 'alex' },
+        data: { age: 18 }
+        // timeoutTime: 10
+        // success(){},error(){}
+      });
+      p.xhr.abort();
+
+      const { ERROR_HTTP_CODE, ERROR_REQUEST, ERROR_TIMEOUT, ERROR_ABORT } = p;
+
+      p.then(repsonse => {
+        console.log(repsonse);
+      }).catch(err => {
+        // console.log(err);
+        switch (err.type) {
+          case ERROR_HTTP_CODE:
+            console.log(err.text);
+            break;
+          case ERROR_REQUEST:
+            console.log(err.text);
+            break;
+          case ERROR_TIMEOUT:
+            console.log(err.text);
+            break;
+          case ERROR_ABORT:
+            console.log(err.text);
+            break;
+        }
+      });
+    </script>
+  </body>
+</html>

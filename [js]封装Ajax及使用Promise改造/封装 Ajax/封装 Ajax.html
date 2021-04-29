@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>封装 Ajax</title>
+	</head>
+	<body>
+		<script type="module">
+			// const url = 'https://www.imooc.com/api/http/search/suggest?words=js';
+			// const xhr = new XMLHttpRequest();
+			// xhr.addEventListener(
+			//   'load',
+			//   () => {
+			//     if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+			//       console.log(xhr.responseText);
+			//     }
+			//   },
+			//   false
+			// );
+			// xhr.open('GET', url, true);
+			// xhr.send(null);
+
+			import { ajax, get, getJSON, post } from "./ajax/index.js";
+
+			const url = "https://www.imooc.com/api/http/search/suggest?words=js";
+			// const url = 'https://www.iimooc.com/api/http/search/suggest?words=js';
+
+			// const url = './414.html';
+
+			const xhr = ajax(url, {
+				method: "GET",
+				params: { username: "alex" },
+				data: {
+					age: 18,
+				},
+				responseType: "json",
+				// timeoutTime: 10,
+
+				success(response) {
+					console.log(response);
+				},
+				httpCodeError(err) {
+					console.log("http code error", err);
+				},
+				error(xhr) {
+					console.log("error", xhr);
+				},
+				abort(xhr) {
+					console.log("abort", xhr);
+				},
+				timeout(xhr) {
+					console.log("timeout", xhr);
+				},
+			});
+
+			// xhr.abort();
+		</script>
+	</body>
+</html>
