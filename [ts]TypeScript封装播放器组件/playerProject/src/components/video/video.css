@@ -1,0 +1,119 @@
+.video{
+  position: relative;
+  overflow: hidden;
+}
+.video-content{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;/*指定元素的内容应该如何去适应指定容器的高度与宽度。*/
+}
+.video-controls{
+  position: absolute;
+  width: 100%;
+  bottom: -50px;
+  left: 0;
+  height: 50px;
+  background:rgba(0, 0, 0, 0.8);
+  transition: 0.5s;
+}
+.video-progress{
+  width: 100%;
+  height: 5px;
+  background: #222223;
+  position: relative;
+}
+.video-progress-now{
+  width: 0;
+  height: 100%;
+  background: #ff6a03;
+  left: 0;
+  position: absolute;
+  z-index: 2;
+}
+.video-progress-suc{
+  width: 70%;
+  height: 100%;
+  background: #666;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
+.video-progress-bar{
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top:0;
+  margin-left:-7px;
+  margin-top: -4px;
+  z-index: 2;
+}
+.video-play{
+  float: left;
+  height: 45px;
+  line-height: 45px;
+}
+.video-play i{
+  font-size: 20px;
+  margin-left: 35px;
+  color: #fff;
+  cursor: pointer;
+}
+.video-time{
+  float: left;
+  height: 45px;
+  line-height: 45px;
+  margin-left: 30px;
+  color: #fff;
+}
+.video-full{
+  float: right;
+  height: 45px;
+  line-height: 45px;
+  margin-right: 20px;
+}
+.video-full i{
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+.video-volume{
+  float: right;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 10px;
+  right: 20px;
+}
+.video-volume i{
+  font-size: 20px;
+  margin-right: 20px;
+  color: #fff;
+}
+.video-volprogress{
+  width: 100px;
+  height: 5px;
+  background: #222223;
+  position: relative;
+}
+.video-volprogress-now{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: #ff6a03;
+  z-index: 2;
+}
+.video-volprogress-bar{
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top:0;
+  margin-left:-7px;
+  margin-top: -4px;
+  z-index: 2;
+}
